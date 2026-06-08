@@ -1,0 +1,188 @@
+# Agentic AI Frameworks Setup Guide
+
+## Prerequisites
+
+### Install Python 3.11
+
+Verify:
+
+```bash
+python --version
+```
+
+Expected:
+
+```text
+Python 3.11.x
+```
+
+---
+
+## Install Ollama
+
+Download Ollama from:
+
+https://ollama.com
+
+Verify:
+
+```bash
+ollama --version
+```
+
+Pull a model:
+
+```bash
+ollama pull llama3
+```
+
+Verify:
+
+```bash
+ollama list
+```
+
+Expected:
+
+```text
+llama3
+```
+
+Start Ollama:
+
+```bash
+ollama serve
+```
+
+---
+
+# Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+### Mac/Linux
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+# Framework 1: LangChain
+
+## Installation
+
+```bash
+pip install langchain
+pip install langchain-ollama
+pip install langgraph
+pip install yfinance
+```
+
+Or
+
+```bash
+pip install langchain langchain-ollama langgraph yfinance
+```
+
+## Verify
+
+```bash
+pip show langchain
+```
+
+---
+
+# Framework 2: CrewAI
+
+## Installation
+
+```bash
+pip install crewai
+pip install yfinance
+```
+
+Or
+
+```bash
+pip install crewai yfinance
+```
+
+## Verify
+
+```bash
+pip show crewai
+```
+
+---
+
+# Framework 3: LlamaIndex
+
+## Installation
+
+```bash
+pip install llama-index
+pip install llama-index-llms-ollama
+pip install llama-index-embeddings-huggingface
+pip install yfinance
+```
+
+Or
+
+```bash
+pip install llama-index llama-index-llms-ollama llama-index-embeddings-huggingface yfinance
+```
+
+## Verify
+
+```bash
+pip show llama-index
+```
+
+---
+
+# Common Libraries Used In Demos
+
+## Yahoo Finance
+
+Used for Stock Market Agent demos.
+
+```bash
+pip install yfinance
+```
+
+---
+
+## Verify Ollama Connection
+
+Create test.py
+
+```python
+from langchain_ollama import ChatOllama
+
+llm = ChatOllama(model="llama3")
+
+response = llm.invoke(
+    "What is Agentic AI?"
+)
+
+print(response.content)
+```
+
+Run:
+
+```bash
+python test.py
+```
+
+If successful, your Ollama model is ready for LangChain, CrewAI, and LlamaIndex demos.
+
+
